@@ -3,8 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecionando...</title>
-    
+    <title>Oferta Exclusiva para Você!</title>
+
+    <style>
+        /* Estilo geral da página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Card central para o formulário */
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Título */
+        h2 {
+            color: #ff416c;
+            margin-bottom: 10px;
+        }
+
+        /* Inputs do formulário */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Botão */
+        button {
+            background: #ff416c;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e63950;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: gray;
+        }
+
+    </style>
+
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
@@ -15,44 +81,44 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Pixel do Facebook -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '629273216591354'); 
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=629273216591354&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Pixel do Facebook -->
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V5GS3P2"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <!-- Formulário de Captura -->
+        <h2>🎁 Oferta Exclusiva para Você!</h2>
+        <p>Preencha seus dados e receba um desconto especial!</p>
 
-    <h1>Redirecionando...</h1>
-    <p>Aguarde um momento...</p>
+        <form id="leadForm">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+            <button type="submit">🔒 Receber Oferta</button>
+        </form>
+
+        <p class="footer">Seus dados estão seguros conosco. 💖</p>
+    </div>
 
     <script>
-      // Aguarda 0.5 segundos antes do redirecionamento
-      setTimeout(function() {
-          window.location.href = "https://lista.mercadolivre.com.br/creme-anti-envelhecimento";
-      }, 500);
+        document.getElementById("leadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const telefone = document.getElementById("telefone").value;
+
+            // Enviar dados para o Google Tag Manager
+            dataLayer.push({
+                'event': 'leadCaptured',
+                'nome': nome,
+                'email': email,
+                'telefone': telefone
+            });
+
+            // Redirecionar para o Mercado Livre
+            window.location.href = "https://lista.mercadolivre.com.br/creme-anti-envelhecimento";
+        });
     </script>
 
 </body>
 </html>
-
